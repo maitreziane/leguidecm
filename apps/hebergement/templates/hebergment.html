@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block content %}
+      
+
+{% load static %}
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="w-100" src="{% static 'img/img-heberg.jpg' %}" alt="Image">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 700px;">
+                        
+                        <h1 class="display-3 text-white mb-4 animated slideInDown">Découvrer Hotel</h1>
+                    </div>
+                </div>
+            </div>
+            {% if Hebergement %}
+            {% for heb in Hebergement %}
+                <div class="carousel-item ">
+                    <img class="w-100" src="{{heb.image}}" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3 wow fadeInUp" style="max-width: 700px;">
+                            <h1 class="display-3 text-white mb-4 animated slideInDown">Découvrer {{heb.model.name_heb}}l</h1>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!-- Carousel End --> 
+
+<!-- Room Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            
+            <h1 class="mb-5">Hebergements <span class="text-primary text-uppercase">Populaires</span></h1>
+            <h6 class="section-title text-center text-primary text-uppercase"></h6>
+            <br>
+        </div>
+        <div class="row g-4 justify-content-center align-items-center mt-3">
+            {% if Hebergement %}
+            {% for heb in Hebergement %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp justify-content-center align-items-center" data-wow-delay="0.1s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{{heb.image}}" alt="">
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">{{heb.model.name_heb}}</h5>
+                            <div class="ps-2">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                        </div>
+                        <div class=" " style="height: 45px;">
+                            <i class="orange fa fa-map-marker-alt me-2"></i>{{heb.model.localisation}}
+                        </div>
+                        <div class=" " style="height: 45px;">
+                            <i class="orange fa fa-phone-alt me-2"></i>{{heb.model.contact}}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+            
+        </div>
+    </div>
+</div>
+<!-- Room End -->
+
+
+   
+{% include "footer.html" %}
+{% endblock %}

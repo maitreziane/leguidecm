@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container-fluid py-5 mb-5 header-attraction">
+    <div class="container py-5">
+        <div class="row justify-content-center py-5">
+            <div class="text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Nos Produits</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=" container-xxl px-5 ">
+    <div class="container justify-content-center w-100  h4 rounded ">
+        
+        <div class="d-flex border-bottom bg-blue-dark">
+            {% for cat in category %}
+            <small class="flex-fill text-center border py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><span class="text-white">{{cat.category_name}}</span> </small>
+            {% endfor %}
+        </div>
+        
+    </div>  
+</div>
+
+  <!-- Attraction item Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4 justify-content-center mb-2">
+            
+            {% for product in Products %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" style="width: 350px; height: 400px;" data-wow-delay="0.1s">
+                <div class="package-item">
+                    
+                          
+                    <div class="overflow-hidden">
+                        <img class="img-fluid img-thumbnail" style="height: 200px; width: 350px;" src="{{product.image.url}}" alt="">
+                    </div>
+                        
+                    <div class="d-flex border-bottom">
+                        
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{product.model.category.category_name}}</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>
+                            0{{product.model.days}} Jours
+                        </small>
+                    </div>
+                    <div class=" text-center pb-2">
+                        <h6 class="  mb-0 py-1 bg-orange rounded ">{{product.model.title}}</h6>
+                        <span class="pt-3">{{product.model.price}} xaf /pers</span>
+                    </div>
+                    <div class="text-center p-2">
+                        <p>{{product.model.descript}}</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <a href="{% url 'detailproduct' product.model.category.slug_type product.model.id %}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 30px 30px 30px;">Voir</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+  <!-- Attraction item End -->
+
+
+{% include "footer.html" %}
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+{% endblock %}

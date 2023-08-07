@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container-fluid py-5 mb-5 header-attraction">
+    <div class="container py-5">
+        <div class="row justify-content-center py-5">
+            <div class="text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Retrouver les sites d'attraction</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class=" container-xxl px-5 ">
+    <div class="container justify-content-center w-100  h4 rounded ">
+        
+        <div class="d-flex border-bottom bg-blue-dark">
+            <small class="flex-fill text-center border py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><span class="text-white">Chute</span> </small>
+            <small class="flex-fill text-center border py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><span class="text-white">Parc</span></small>
+            <small class="flex-fill text-center border py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><span class="text-white">Musée</span></small>
+        </div>
+        
+    </div>  
+</div>
+
+  <!-- Attraction item Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            {% if attractions %}
+                {% for attraction in attractions %} 
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="package-item">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid img-thumbnail" src="{{attraction.image}}" alt="">
+                            </div>
+                            <div class="d-flex border-bottom">
+                                
+                                <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{attraction.model.ville}}</small>
+                                <small class="flex-fill text-center border-end py-2"><i class="fa text-primary me-2"></i>{{attraction.model.category}}</small>
+                            </div>
+                            <div class="text-center p-1">
+                                <h6>{{attraction.model.title}}</h6>
+                                <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                                <div class="d-flex justify-content-center mb-2">
+                                    
+                                    <a href="{% url 'detail_view' %}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 30px 30px 30px;">Voir</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+            <div class="">
+                <h1> No yet attraction</h1>
+            </div>
+            {% endif%}
+        </div>
+    </div>
+</div>
+  <!-- Attraction item End -->
+
+
+  {% include "footer.html" %}
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+{% endblock %}

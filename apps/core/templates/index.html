@@ -1,0 +1,517 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    
+
+{% load static %}
+<div class="container-fluid bg-orange py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Profitez de vos vacances avec nous</h1>
+                <p class="fs-4 text-white mb-4 animated slideInDown">Tempor erat elitr rebum at clita diam amet diam et eos erat ipsum lorem sit</p>
+                <div class="position-relative w-75 mx-auto animated slideInDown">
+                    <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Douala">
+                    <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">Recherche</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/photo_2023-06-22_09-09-28.jpg' %}" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">A propos de nous</h6>
+                    <h1 class="mb-4">Bienvenu chez <span class="text-primary">Le Guide</span></h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2 " href="{% url 'about' %}">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container justify-content-center">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
+                <h1 class="mb-5">Nos Services</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
+                            <h5> Reservation Hotel</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-user text-primary mb-4"></i>
+                            <h5>Guides de voyage</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
+                            <h5>Gestion d'événements</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Destination Start -->
+    {% if attr_pop %}
+        {% for attr in attr_pop %} 
+        <div class="container-xxl py-5 destination">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
+                    <h1 class="mb-5">Destinations populaires</h1>
+                </div>
+                <div class="container">
+                    <div class="row g-4 justify-content-center">
+                        {% if attractions %}
+                            {% for attraction in attractions %} 
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="package-item">
+                                        <div class="overflow-hidden">
+                                            <img class="img-fluid img-thumbnail" src="{{attraction.image}}" alt="">
+                                        </div>
+                                        <div class="d-flex border-bottom">
+                                            
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{attraction.model.ville}}</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa text-primary me-2"></i>{{attraction.model.category}}</small>
+                                        </div>
+                                        <div class="text-center p-1">
+                                            <h6>{{attraction.model.title}}</h6>
+                                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                                            <div class="d-flex justify-content-center mb-2">
+                                                
+                                                <a href="#" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 30px 30px 30px;">Voir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                        <div class="">
+                            <h1> No yet attraction</h1>
+                        </div>
+                        {% endif%}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+    <!-- Destination Start -->
+
+
+    <!-- Package Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">A ne pas rater</h6>
+                <h1 class="mb-5">Nos Packages du moment</h1>
+            </div>
+            <!-- Attraction item Start -->
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-4 justify-content-center">
+                    {% for product in products %}
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="package-item">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid img-thumbnail" style="height: 280px; width: 350px;" src="{{product.image.url}}" alt="">
+                                </div>
+                            
+                                <div class="d-flex border-bottom">
+                                    
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{product.model.category.category_name}}</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i>
+                                        0{{product.model.days}} Jours
+                                    </small>
+                                </div>
+                                <div class=" text-center pb-2">
+                                    <h6 class="  mb-0 py-1 bg-orange rounded ">{{product.model.title}}</h6>
+                                    <span class="pt-3">{{product.model.price}} xaf /pers</span>
+                                </div>
+                                <div class="text-center p-2">
+                                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                                    <div class="d-flex justify-content-center mb-2">
+                                        <a href="{% url 'detail_view'%}" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 30px 30px 30px;">Lire plus</a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- Attraction item End -->
+        </div>
+    </div>
+    <!-- Package End -->
+
+
+    <!-- Blog and news Start -->
+    <section class="pt-5 pb-5 booking">
+        <div class="container ">
+            <div class="row mt-2">
+                <div class="col-6">
+                    <h3 class="mb-3">Actualités </h3>
+                </div>
+                <div class="col-6 text-right">
+                    <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-12">
+                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+    
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row">
+    
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+    
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="card">
+                                            <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Special title treatment</h4>
+                                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog and news Start -->
+
+
+   <!-- Room Start -->
+   <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            
+            <h1 class="mb-5">Hebergements <span class="text-primary text-uppercase">Populaires</span></h1>
+            <h6 class="section-title text-center text-primary text-uppercase"></h6>
+            <br>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/onomo-hotel-douala.jpg' %}" alt="">
+                        
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Onomo hotel</h5>
+                            <div class="ps-2">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                        </div>
+                        
+                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/img-heberg.jpg' %}" alt="">
+                        
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">King Palace</h5>
+                            <div class="ps-2">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                        </div>
+                        
+                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/onomo-hotel-douala.jpg' %}" alt="">
+                        
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Fini hotel</h5>
+                            <div class="ps-2">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                        </div>
+                        
+                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   <!-- Room End -->
+
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Guide de voyage</h6>
+                <h1 class="mb-5">Rencontrer nos Guides</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+       
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden p-2 ">
+                            <img class="img-fluid" style="height: 200px; width: 300px;" src="{% static 'img/IMG_3583.HEIC' %}" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Djomo Merlin</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden p-2">
+                            <img class="img-fluid" style="height: 200px; width: 300px;" src="{% static 'img/IMG_3583.HEIC' %}" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Djomo Merlin</h5>
+                            <small>Designation</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Testimoignage</h6>
+                <h1 class="mb-5">Retour des clients!!!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative">
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-1.jpg' %}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">John Doe</h5>
+                    <p>New York, USA</p>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-2.jpg' %}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">John Doe</h5>
+                    <p>New York, USA</p>
+                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-3.jpg' %}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">John Doe</h5>
+                    <p>New York, USA</p>
+                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{% static 'img/testimonial-4.jpg' %}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">John Doe</h5>
+                    <p>New York, USA</p>
+                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+        
+
+    {% include "footer.html" %}
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+{% endblock %}
+    

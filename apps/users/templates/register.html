@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Guide | Registration</title>
+
+    {% load static %}
+    <link href="{% static 'img/le_guide.png' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href= "{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+    
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body style="background-color: #eee;">
+
+    <section class=" vh-80 py-2 " >
+        <div class="container">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-lg-12 col-xl-11">
+              <div class="card text-black mt-2" style="border-radius: 25px;">
+                <div class="card-body">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+      
+                      <p class="text-center h1 fw-bold mb-2 mx-1 mx-md-4 mt-2 mb-2">Sign up</p>
+      
+                      <form class="mx-1 mx-md-4" method="post">
+                        {% csrf_token %}
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw mb-4"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="text" name="username" id="form3Example1c" class="form-control" />
+                            <label class="form-label" for="form3Example1c">Nom d'utilisateur</label>
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw mb-4"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="email" name="email" id="form3Example3c" class="form-control" />
+                            <label class="form-label" for="form3Example3c">Votre Email*</label>
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-lock fa-lg me-3 fa-fw mb-4"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="password" name="password1" id="form3Example4c" class="form-control" />
+                            <label class="form-label" for="form3Example4c">Mot de passe</label>
+                          </div>
+                        </div>
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-key fa-lg me-3 fa-fw mb-4"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input type="password" name="password2" id="form3Example4cd" class="form-control" />
+                            <label class="form-label" for="form3Example4cd">
+                              
+                                 Confirmer le mot de passe
+                            </label>
+                          </div>
+                        </div>
+                        <div class="form-check d-flex justify-content-center mb-2">
+                            {% for field in registration_form %}
+                              <p>
+                              {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                              {% endfor %}
+                                </p>
+                          {% endfor %}
+                          
+                          {% if registration_form.non_field_errors %}
+                            <div style="color: red">
+                              <p>{{registration_form.non_field_errors}}</p>
+                            </div>
+                            
+                          {% endif %}
+                        </div>
+                        
+                      
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <button type="submit" class="btn btn-primary btn-lg">Créer</button>
+                        </div>
+
+                        
+      
+                      </form>
+      
+                    </div>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+      
+                      <img src="{% static 'img/le_guide.png' %}"
+                        class="img-fluid" alt="Sample image">
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+</body>
+</html>

@@ -1,0 +1,4 @@
+class ProductHelp:
+    
+    model=''
+    image=''
